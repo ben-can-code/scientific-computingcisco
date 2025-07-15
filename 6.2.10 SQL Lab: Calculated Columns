@@ -1,0 +1,87 @@
+1  Continent Populations
+The countries table includes the population of each country. But what if we wanted to know the population of each continent? GROUP BY to the rescue!!
+Use GROUP BY and SUM() to calculate the total population of each continent. Select only the continent column and the sum.
+
+       SELECT continent, SUM(population) AS total_population
+       FROM countries
+       GROUP BY continent;
+2   Counting Countries
+Use COUNT() to write a query to show the number of countries for each continent. Select the continent and the count.
+    SELECT continent, COUNT(*) 
+    FROM countries
+    GROUP BY continent;
+3     Counting Prizes
+Does the Nobel Prize Committee award the same number of prizes each year? Let's find out!
+Write a query to count the number of prizes for each year. Select the year and the count.
+Note that you can use COUNT(*) to count the rows in each group.
+     SELECT year, COUNT(*) AS prize_count
+     FROM prizes
+     GROUP BY year;
+
+4 Rename Column
+SQL allows us to rename columns by using the AS operator.
+Try replacing COUNT(*) with the following to rename that calculated column as prize_count:
+COUNT(*) AS prize_count
+   SELECT year, COUNT(*) AS prize_count
+   FROM prizes
+   GROUP BY year;
+5  Order by prize_count
+What if we wanted to find the year where they gave out the highest number of prizes?
+Now that we have a nice prize_count name for that calculated column, we can use the ORDER BY clause to sort the results.
+Add ORDER BY prize_count DESC to the end of the query to sort the rows in descending order.
+                SELECT year, COUNT(*) AS prize_count
+                FROM prizes
+                GROUP BY year
+                ORDER BY prize_count DESC;
+7   Counting Categories
+Fifteen prizes is a lot, but those numbers represent people. Many prizes are given to multiple collaborators. Let's count the number of categories awarded each year.
+Instead of COUNT(*), let's use COUNT(category) and see what we get.
+While we are at it, let's rename that column to category_count.
+              SELECT year, COUNT(category) AS category_count
+              FROM prizes
+              GROUP BY year;
+
+8 Counting DISTINCT
+Wait a minute!! Those are the same numbers we got last time!
+This is because by default COUNT will tally up all values even if there are duplicates. But SQL provides us with the DISTINCT flag which will tell COUNT to ignore duplicates.
+Change the COUNT function to COUNT(DISTINCT category)
+                  SELECT year, COUNT(DISTINCT category) AS category_count
+                  FROM prizes
+                  GROUP BY year;
+
+10  Let's switch over to movies and apply everything we've learned so far.
+Write a query to show which MPAA category generates the most average revenue for movies.
+Call the calculated column avg_revenue, and order by that value from greatest to least.
+              SELECT mpaa, AVG(revenue) AS avg_revenue
+              FROM movies
+              GROUP BY mpaa
+              ORDER BY avg_revenue DESC;
+
+12     Your Query
+You now have the SQL power to answer a lot of questions! Generate your own query.
+What are you curious about?
+            SELECT title, revenue 
+            FROM movies 
+            ORDER BY revenue DESC 
+            LIMIT 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
