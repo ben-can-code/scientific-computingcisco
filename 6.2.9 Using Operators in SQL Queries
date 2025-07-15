@@ -1,0 +1,41 @@
+1 Select All Vehicles
+SELECT * FROM vehicles;
+
+2 Group by Substrate
+SELECT * FROM vehicles
+GROUP BY substrate;
+
+3 Visualize Groups
+SELECT * FROM vehicles
+GROUP BY propellant;
+
+4 Average Speed
+SELECT AVG(speed) 
+FROM vehicles
+GROUP BY propellant;
+
+5 More Columns
+SELECT propellant, AVG(speed) 
+FROM vehicles
+GROUP BY propellant;
+
+6 Passengers per Substrate
+SELECT substrate, AVG(passengers) 
+FROM vehicles
+GROUP BY substrate;
+
+7 Counting Vehicles
+SELECT substrate, COUNT(vehicle)
+FROM vehicles
+
+8 Your Query
+SELECT substrate, MAX(speed) AS max_speed
+FROM vehicles
+GROUP BY substrate;
+
+
+
+
+
+
+
