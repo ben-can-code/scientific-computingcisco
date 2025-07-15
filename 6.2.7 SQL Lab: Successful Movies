@@ -1,0 +1,36 @@
+2    Highest Rated Movies
+SELECT *
+FROM movies
+ORDER BY ravg DESC
+LIMIT 5;
+
+4    Lowest Rated Movies
+SELECT *
+FROM movies
+ORDER BY ravg ASC
+LIMIT 5;
+
+5   Highest Grossing Movies
+SELECT *
+FROM movies
+ORDER BY revenue DESC
+LIMIT 5;
+
+7 Lowest Grossing Movies
+SELECT title, revenue, mpaa
+FROM movies
+ORDER BY revenue ASC
+LIMIT 5;
+
+8 Movies that lost money
+SELECT *
+FROM movies
+WHERE revenue < budget;
+
+9 Sort by Ratings
+SELECT *
+FROM movies
+WHERE revenue < budget;
+ORDER BY ravg DESC;
+
+
