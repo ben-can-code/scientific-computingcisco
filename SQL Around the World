@@ -1,0 +1,21 @@
+Select Everything
+
+SELECT * 
+FROM hello
+
+3 Select All Shapes
+SELECT * FROM shapes;
+
+4 Visualize Results
+SELECT * FROM shapes;
+
+5 Shapes with 5 dots
+SELECT * FROM shapes WHERE dots = 5;
+
+6 Less than 3 dots
+SELECT * FROM shapes WHERE dots < 3;
+
+7 Red Shapes
+SELECT * FROM shapes WHERE color = 'red';
+
+
