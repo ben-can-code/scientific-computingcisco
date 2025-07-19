@@ -1,0 +1,78 @@
+1   Countries + Geoloc
+Let's start by joining the countries and geoloc tables. The geoloc table has latitude and longitude values for the center of each country.
+Enter the following NATURAL JOIN query to see how it combines the data into a single table:
+
+              SELECT * 
+              FROM countries 
+              NATURAL JOIN geoloc;
+
+2 Southern Hemisphere
+SELECT * 
+FROM countries 
+NATURAL JOIN geoloc
+WHERE latitude < 0;
+
+ 3 Eastern Countries
+SELECT * 
+FROM countries 
+NATURAL JOIN geoloc
+WHERE longitude > 0;
+
+4
+Coastal Countries
+Now let's join countries with the coastlines tables.
+Write a query to select only the countries that have a coastline greater than 0.
+
+SELECT * 
+FROM countries 
+NATURAL JOIN coastlines
+WHERE coastline > 0;
+
+5
+Different Column Names
+SELECT * 
+FROM shapes 
+JOIN perimeters 
+ON shapes.id = perimeters.shape_id;
+
+6 Basic JOIN
+SELECT * 
+FROM shapes 
+JOIN perimeters 
+ON id = shape_id;
+
+7 Large Perimeters
+SELECT * 
+FROM shapes 
+JOIN perimeters 
+ON id = shape_id
+WHERE perimeter > 400;
+
+
+Compare and Contrast
+To capture what we learned here, write some notes to describe the similarities and differences between a NATURAL JOIN and a basic JOIN.
+
+Use NATURAL JOIN for quick joins when column names are consistent and the relationship is simple.
+Use JOIN ... ON for better control, different column names, and complex conditions — it's the more robust and preferred method in most real-world applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
